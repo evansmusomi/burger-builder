@@ -25,14 +25,16 @@ class BurgerBuilder extends Component {
     loading: false,
     error: false
   };
-  
-  componentDidMount(){
-    axios.get("https://burger-builder-260c7.firebaseio.com/ingredients.json")
+
+  componentDidMount() {
+    axios
+      .get("https://burger-builder-260c7.firebaseio.com/ingredients.json")
       .then(response => {
-        this.setState({ ingredients: response.data})
-      }).catch(error => {
-        this.setState({ error: true })
+        this.setState({ ingredients: response.data });
       })
+      .catch(error => {
+        this.setState({ error: true });
+      });
   }
 
   updatePurchaseState(ingredients) {
@@ -84,7 +86,7 @@ class BurgerBuilder extends Component {
   };
 
   purchaseContinueHandler = () => {
-    this.setState({ loading: true });
+    /* this.setState({ loading: true });
     const order = {
       ingredients: this.state.ingredients,
       price: this.state.totalPrice,
@@ -106,7 +108,8 @@ class BurgerBuilder extends Component {
       })
       .catch(error => {
         this.setState({ loading: false, purchasing: false });
-      });
+      }); */
+    this.props.history.push("/checkout");
   };
 
   render() {
@@ -118,9 +121,9 @@ class BurgerBuilder extends Component {
     }
 
     let orderSummary = null;
-    let burger = this.state.error ? "Ingredients can't be loaded" : <Spinner />
-    
-    if(this.state.ingredients){
+    let burger = this.state.error ? "Ingredients can't be loaded" : <Spinner />;
+
+    if (this.state.ingredients) {
       burger = (
         <Aux>
           <Burger ingredients={this.state.ingredients} />
@@ -134,7 +137,7 @@ class BurgerBuilder extends Component {
           />
         </Aux>
       );
-      
+
       orderSummary = (
         <OrderSummary
           ingredients={this.state.ingredients}
@@ -144,7 +147,7 @@ class BurgerBuilder extends Component {
         />
       );
     }
-    
+
     if (this.state.loading) {
       orderSummary = <Spinner />;
     }
@@ -157,7 +160,7 @@ class BurgerBuilder extends Component {
         >
           {orderSummary}
         </Modal>
-        { burger }
+        {burger}
       </Aux>
     );
   }
