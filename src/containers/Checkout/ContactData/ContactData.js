@@ -29,7 +29,8 @@ class ContactData extends Component {
           street: this.state.address.street,
           postalCode: this.state.address.postalCode
         }
-      }
+      },
+      deliveryMethod: "fastest"
     };
 
     axios
