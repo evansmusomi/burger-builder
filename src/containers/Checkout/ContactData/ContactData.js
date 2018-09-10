@@ -8,7 +8,6 @@ import { checkValidity, updateObject } from "../../../shared/utility";
 import classes from "./ContactData.css";
 import Input from "../../../components/UI/Input/Input";
 import Spinner from "../../../components/UI/Spinner/Spinner";
-import { updateObject } from "../../../shared/utility";
 import withErrorHandler from "../../../hoc/withErrorHandler/withErrorHandler";
 
 class ContactData extends Component {

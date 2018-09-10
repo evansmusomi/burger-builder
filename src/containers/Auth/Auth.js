@@ -7,7 +7,6 @@ import Button from "../../components/UI/Button/Button";
 import { checkValidity, updateObject } from "../../shared/utility";
 import classes from "./Auth.css";
 import Input from "../../components/UI/Input/Input";
-import { updateObject } from "../../shared/utility";
 import Spinner from "../../components/UI/Spinner/Spinner";
 
 class Auth extends Component {
