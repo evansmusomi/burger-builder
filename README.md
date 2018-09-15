@@ -2,7 +2,7 @@
 
 Taste satisfaction - build and order a burger made of your favourite ingredients 🍔
 
-## Current Features
+## Features
 
 - _Add ingredients_: `A user can add their preferred ingredients to their custom burger`
 - _Remove ingredients_: `A user can remove ingredients from their custom burger`
@@ -10,3 +10,4 @@ Taste satisfaction - build and order a burger made of your favourite ingredients
 - _Mobile friendly_: `A user can build a burger from their mobile device thanks to responsiveness`
 - _Checkout_: `A user can place an order that's saved in the cloud, including their contact data`
 - _View Orders_: `A user can view orders they've made`
+- _Authenticate_: `A user should be able to signup and sign in to order a burger and view orders`
